@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <style>
+      @media print {
+        @page {
+          margin: 0.75in;
+          size: A4;
+        }
+
+        body {
+          font-size: 11pt;
+          line-height: 1.4;
+        }
+
+        h1 {
+          font-size: 24pt;
+        }
+
+        h2 {
+          font-size: 14pt;
+          margin-top: 16pt;
+        }
+
+        h3 {
+          font-size: 12pt;
+        }
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+
+        .page-break {
+          page-break-before: always;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <slot />
+  </body>
+</html>

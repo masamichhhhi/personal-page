@@ -1,0 +1,21 @@
+links:
+  - platform: "GitHub"
+    url: "https://github.com/masamichhhhi"
+    description: "Open source projects and contributions"
+    icon: "mdi:github"
+
+  - platform: "LinkedIn"
+    url: "https://www.linkedin.com/in/masamichi-iimori-a0544b1ab/ja/"
+    description: "Professional profile and network"
+    icon: "mdi:linkedin"
+
+  - platform: "Twitter"
+    url: "https://x.com/PFC_masamichhhi"
+    description: "Thoughts and updates"
+    icon: "mdi:twitter"
+
+
+  - platform: "Email"
+    url: "mailto:masamichhhi@gmail.com"
+    description: "Get in touch directly"
+    icon: "mdi:email"

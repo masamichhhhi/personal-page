@@ -1,0 +1,110 @@
+name: "John Doe"
+title: "Senior Software Engineer"
+email: "john.doe@example.com"
+location: "San Francisco, CA"
+summary: "Experienced software engineer with 8+ years of expertise in building scalable web applications. Passionate about clean code, developer experience, and open source. Skilled in TypeScript, React, Node.js, and cloud technologies."
+
+experiences:
+  - company: "Tech Corp"
+    role: "Senior Software Engineer"
+    startDate: "2022-01"
+    endDate: null
+    location: "San Francisco, CA"
+    responsibilities:
+      - "Led development of microservices architecture serving 1M+ daily users"
+      - "Mentored team of 5 junior developers and conducted code reviews"
+      - "Reduced API response time by 40% through performance optimization"
+      - "Implemented CI/CD pipelines using GitHub Actions and AWS"
+
+  - company: "StartupXYZ"
+    role: "Full Stack Developer"
+    startDate: "2019-06"
+    endDate: "2021-12"
+    location: "New York, NY"
+    responsibilities:
+      - "Built customer-facing dashboard using React and TypeScript"
+      - "Designed and implemented RESTful APIs with Node.js and PostgreSQL"
+      - "Integrated third-party payment systems (Stripe, PayPal)"
+      - "Participated in agile development with 2-week sprints"
+
+  - company: "WebAgency Inc"
+    role: "Junior Developer"
+    startDate: "2016-03"
+    endDate: "2019-05"
+    location: "Boston, MA"
+    responsibilities:
+      - "Developed responsive websites for various clients"
+      - "Collaborated with designers to implement pixel-perfect UIs"
+      - "Maintained and updated legacy PHP applications"
+
+skills:
+  - category: "Languages"
+    items:
+      - "TypeScript"
+      - "JavaScript"
+      - "Python"
+      - "Go"
+      - "SQL"
+
+  - category: "Frameworks & Libraries"
+    items:
+      - "React"
+      - "Next.js"
+      - "Astro"
+      - "Node.js"
+      - "Express"
+      - "FastAPI"
+
+  - category: "Cloud & DevOps"
+    items:
+      - "AWS (EC2, S3, Lambda)"
+      - "Docker"
+      - "Kubernetes"
+      - "GitHub Actions"
+      - "Terraform"
+
+  - category: "Databases"
+    items:
+      - "PostgreSQL"
+      - "MongoDB"
+      - "Redis"
+      - "DynamoDB"
+
+  - category: "Tools"
+    items:
+      - "Git"
+      - "VS Code"
+      - "Figma"
+      - "Jira"
+
+projects:
+  - name: "Open Source CLI Tool"
+    summary: "A command-line tool for automating development workflows, used by 5000+ developers worldwide."
+    role: "Creator & Maintainer"
+    technologies:
+      - "TypeScript"
+      - "Node.js"
+      - "Commander.js"
+    period: "2023-01 - Present"
+    url: "https://github.com/example/cli-tool"
+
+  - name: "E-commerce Platform"
+    summary: "Built a scalable e-commerce platform handling 10k daily orders with real-time inventory management."
+    role: "Tech Lead"
+    technologies:
+      - "React"
+      - "Node.js"
+      - "PostgreSQL"
+      - "Redis"
+      - "AWS"
+    period: "2022-03 - 2022-12"
+
+  - name: "Real-time Analytics Dashboard"
+    summary: "Developed a real-time analytics dashboard processing 1M+ events per day with sub-second latency."
+    role: "Senior Developer"
+    technologies:
+      - "Vue.js"
+      - "Python"
+      - "Apache Kafka"
+      - "ClickHouse"
+    period: "2021-01 - 2021-11"

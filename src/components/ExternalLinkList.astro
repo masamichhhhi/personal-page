@@ -1,0 +1,16 @@
+---
+import ExternalLink from './ExternalLink.astro';
+import type { ExternalLink as ExternalLinkType } from '@/types/links';
+
+interface Props {
+  links: ExternalLinkType[];
+}
+
+const { links } = Astro.props;
+---
+
+<div class="grid gap-4 sm:grid-cols-2">
+  {links.map((link) => (
+    <ExternalLink link={link} />
+  ))}
+</div>
