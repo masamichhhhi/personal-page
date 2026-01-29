@@ -13,18 +13,9 @@ const { link } = Astro.props;
   href={link.url}
   target="_blank"
   rel="noopener noreferrer"
-  class="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-md transition-all no-underline group"
+  class="inline-flex items-center justify-center p-4 bg-white text-gray-700 rounded-lg border border-gray-200 hover:text-blue-600 hover:border-blue-500 hover:shadow-md transition-all no-underline"
+  aria-label={link.platform}
+  title={link.platform}
 >
-  <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg group-hover:bg-blue-100 transition-colors">
-    <Icon name={link.icon} class="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors" />
-  </div>
-  <div class="flex-1 min-w-0">
-    <h3 class="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-      {link.platform}
-    </h3>
-    <p class="text-sm text-gray-600 truncate">{link.description}</p>
-  </div>
-  <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-  </svg>
+  <Icon name={link.icon} class="w-8 h-8" />
 </a>
