@@ -3,6 +3,8 @@
 Auto-generated from all feature plans. Last updated: 2026-01-25
 
 ## Active Technologies
+- TypeScript 5.x, Node.js 24 + Astro, @astrojs/rss, astro-icon, Tailwind CSS 4.x (001-simplify-resume)
+- YAML file (src/data/resume.yaml) (001-simplify-resume)
 
 - TypeScript 5.x, Node.js 24 + @astrojs/rss (RSS feed), astro-icon (icons), Tailwind CSS 4.x (styling) (001-personal-page)
 
@@ -22,6 +24,7 @@ npm test && npm run lint
 TypeScript 5.x, Node.js 24: Follow standard conventions
 
 ## Recent Changes
+- 001-simplify-resume: Added TypeScript 5.x, Node.js 24 + Astro, @astrojs/rss, astro-icon, Tailwind CSS 4.x
 
 - 001-personal-page: Added TypeScript 5.x, Node.js 24 + @astrojs/rss (RSS feed), astro-icon (icons), Tailwind CSS 4.x (styling)
 

@@ -3,6 +3,8 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import ResumeExperience from '@components/ResumeExperience.astro';
 import ResumeSkills from '@components/ResumeSkills.astro';
 import ResumeProjects from '@components/ResumeProjects.astro';
+import ResumeCertifications from '@components/ResumeCertifications.astro';
+import ResumePublications from '@components/ResumePublications.astro';
 import { loadResume } from '@utils/loadResume';
 
 const resume = loadResume();
@@ -54,6 +56,16 @@ const resume = loadResume();
 
     <!-- Projects -->
     <ResumeProjects projects={resume.projects} />
+
+    <!-- Certifications -->
+    {resume.certification && resume.certification.length > 0 && (
+      <ResumeCertifications certifications={resume.certification} />
+    )}
+
+    <!-- Publications -->
+    {resume.publication && resume.publication.length > 0 && (
+      <ResumePublications publications={resume.publication} />
+    )}
 
     <!-- Print Button (hidden in print) -->
     <div class="mt-8 text-center no-print">

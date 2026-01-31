@@ -1,0 +1,24 @@
+---
+import type { Certification } from '@/types/resume';
+
+interface Props {
+  certifications: Certification[];
+}
+
+const { certifications } = Astro.props;
+---
+
+<section class="mb-12">
+  <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
+    Certifications
+  </h2>
+  <div class="space-y-6">
+    {certifications.map((cert) => (
+      <div>
+        <h3 class="text-xl font-semibold text-gray-900">{cert.name}</h3>
+        <p class="text-gray-600">{cert.issuer}</p>
+        {cert.description && <p class="text-gray-600 text-sm mt-1">{cert.description}</p>}
+      </div>
+    ))}
+  </div>
+</section>
