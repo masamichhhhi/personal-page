@@ -20,7 +20,18 @@ const { experiences } = Astro.props;
         <div class="mb-2">
           <h3 class="text-xl font-semibold text-gray-900">{exp.role}</h3>
           <div class="flex flex-wrap items-center gap-2 text-gray-600">
-            <span class="font-medium">{exp.company}</span>
+            {exp.companyUrl ? (
+              <a
+                href={exp.companyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-medium hover:text-blue-600 transition-colors"
+              >
+                {exp.company}
+              </a>
+            ) : (
+              <span class="font-medium">{exp.company}</span>
+            )}
             {exp.location && (
               <>
                 <span class="text-gray-400">•</span>
@@ -32,11 +43,7 @@ const { experiences } = Astro.props;
             {formatDateRange(exp.startDate, exp.endDate)}
           </p>
         </div>
-        <ul class="list-disc list-outside ml-4 space-y-1 text-gray-700">
-          {exp.responsibilities.map((item) => (
-            <li>{item}</li>
-          ))}
-        </ul>
+        <p class="text-gray-700 leading-relaxed">{exp.description}</p>
       </div>
     ))}
   </div>

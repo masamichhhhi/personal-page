@@ -32,7 +32,7 @@ Single project structure:
 
 **Purpose**: Verify project is ready for implementation
 
-- [ ] T001 Verify project structure and dependencies are installed per plan.md
+- [X] T001 Verify project structure and dependencies are installed per plan.md
 
 ---
 
@@ -42,7 +42,7 @@ Single project structure:
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T002 Update WorkExperience interface in src/types/resume.ts to replace responsibilities array with description string field
+- [X] T002 Update WorkExperience interface in src/types/resume.ts to replace responsibilities array with description string field
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -56,8 +56,8 @@ Single project structure:
 
 ### Implementation for User Story 1
 
-- [ ] T003 [US1] Update ResumeExperience.astro component in src/components/ResumeExperience.astro to render description paragraph instead of responsibilities list
-- [ ] T004 [US1] Update resume.yaml in src/data/resume.yaml with simplified descriptions for all 5 companies (VideoStep Tech Lead, VideoStep Fullstack, Raksul, ANIFTY, Nexceed)
+- [X] T003 [US1] Update ResumeExperience.astro component in src/components/ResumeExperience.astro to render description paragraph instead of responsibilities list
+- [X] T004 [US1] Update resume.yaml in src/data/resume.yaml with simplified descriptions for all 5 companies (VideoStep Tech Lead, VideoStep Fullstack, Raksul, ANIFTY, Nexceed)
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -71,9 +71,9 @@ Single project structure:
 
 ### Implementation for User Story 2
 
-- [ ] T005 [US2] Add optional companyUrl field to WorkExperience interface in src/types/resume.ts
-- [ ] T006 [US2] Update ResumeExperience.astro component in src/components/ResumeExperience.astro to render company name as clickable link with hover styles when companyUrl exists
-- [ ] T007 [US2] Add company URLs to resume.yaml in src/data/resume.yaml for all applicable companies (VideoStep, Raksul, etc.)
+- [X] T005 [US2] Add optional companyUrl field to WorkExperience interface in src/types/resume.ts
+- [X] T006 [US2] Update ResumeExperience.astro component in src/components/ResumeExperience.astro to render company name as clickable link with hover styles when companyUrl exists
+- [X] T007 [US2] Add company URLs to resume.yaml in src/data/resume.yaml for all applicable companies (VideoStep, Raksul, etc.)
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -83,11 +83,11 @@ Single project structure:
 
 **Purpose**: Verify all changes work correctly across different scenarios
 
-- [ ] T008 [P] Visual verification: Start dev server and verify resume page at http://localhost:4321/resume shows simplified descriptions and clickable company links
-- [ ] T009 [P] PDF export test: Click "Print / Save as PDF" button and verify PDF output is correct
-- [ ] T010 [P] Responsive test: Check mobile and desktop layouts render correctly with shorter descriptions
-- [ ] T011 Verify all company links with URLs open in new tabs with target="_blank" and rel="noopener noreferrer"
-- [ ] T012 Run linting and type checking with npm test && npm run lint
+- [X] T008 [P] Visual verification: Start dev server and verify resume page at http://localhost:4321/resume shows simplified descriptions and clickable company links
+- [X] T009 [P] PDF export test: Click "Print / Save as PDF" button and verify PDF output is correct
+- [X] T010 [P] Responsive test: Check mobile and desktop layouts render correctly with shorter descriptions
+- [X] T011 Verify all company links with URLs open in new tabs with target="_blank" and rel="noopener noreferrer"
+- [X] T012 Run linting and type checking with npm test && npm run lint
 
 ---
 

@@ -1,10 +1,11 @@
 export interface WorkExperience {
   company: string;
+  companyUrl?: string;
   role: string;
   startDate: string;
   endDate: string | null;
   location?: string;
-  responsibilities: string[];
+  description: string;
 }
 
 export interface Skill {
