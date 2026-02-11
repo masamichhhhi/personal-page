@@ -1,116 +1,50 @@
-<!--
-Sync Impact Report
-==================
-Version change: N/A → 1.0.0 (initial creation)
-Modified principles: N/A (initial creation)
-Added sections: Core Principles (5), Content Strategy, Development Workflow, Governance
-Removed sections: N/A
-Templates requiring updates:
-  - .specify/templates/plan-template.md: ✅ No changes needed (generic template)
-  - .specify/templates/spec-template.md: ✅ No changes needed (generic template)
-  - .specify/templates/tasks-template.md: ✅ No changes needed (generic template)
-Follow-up TODOs: None
--->
-
-# Personal Page Constitution
+# [PROJECT_NAME] Constitution
+<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
 
-### I. Content-First Design
+### [PRINCIPLE_1_NAME]
+<!-- Example: I. Library-First -->
+[PRINCIPLE_1_DESCRIPTION]
+<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
 
-コンテンツの可読性とプレゼンテーションを最優先する。
+### [PRINCIPLE_2_NAME]
+<!-- Example: II. CLI Interface -->
+[PRINCIPLE_2_DESCRIPTION]
+<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
 
-- ブログ記事、レジュメ、リンク集のすべてにおいて、コンテンツが明確に伝わるデザインを採用すること
-- 装飾的な要素はコンテンツを引き立てる範囲に留め、過度な視覚効果は避けること
-- テキストは十分なコントラストと適切なフォントサイズで表示し、アクセシビリティを確保すること
-- Markdown形式でのコンテンツ管理を基本とし、記事の執筆・更新を容易にすること
+### [PRINCIPLE_3_NAME]
+<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
+[PRINCIPLE_3_DESCRIPTION]
+<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
 
-**根拠**: パーソナルページの目的は自己表現とコンテンツ共有であり、デザインはその手段に過ぎない。
+### [PRINCIPLE_4_NAME]
+<!-- Example: IV. Integration Testing -->
+[PRINCIPLE_4_DESCRIPTION]
+<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
 
-### II. Performance & SEO
+### [PRINCIPLE_5_NAME]
+<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
+[PRINCIPLE_5_DESCRIPTION]
+<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
 
-高速なページ読み込みと検索エンジン最適化を実現する。
+## [SECTION_2_NAME]
+<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
 
-- Core Web Vitals（LCP、FID、CLS）の基準を満たすこと
-- 画像は適切なフォーマット（WebP等）と遅延読み込みを使用すること
-- 各ページに適切なメタデータ（title、description、OGP）を設定すること
-- 静的サイト生成（SSG）を活用し、可能な限り事前レンダリングを行うこと
+[SECTION_2_CONTENT]
+<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
 
-**根拠**: ブログやレジュメは検索経由でのアクセスが重要であり、SEO対策は必須である。
+## [SECTION_3_NAME]
+<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
 
-### III. Responsive Design
-
-あらゆるデバイスで快適に閲覧できるレスポンシブデザインを実装する。
-
-- モバイルファーストでデザインし、ブレークポイントで大画面に対応すること
-- タッチ操作を考慮したUI要素のサイズとスペーシングを確保すること
-- 画面サイズに応じてナビゲーションを最適化すること（ハンバーガーメニュー等）
-
-**根拠**: ユーザーの多くはモバイルデバイスからアクセスするため、モバイル対応は必須である。
-
-### IV. Maintainability
-
-コンテンツの追加・更新を容易に行える構造を維持する。
-
-- ブログ記事はMarkdownファイルとして管理し、CMS不要で更新可能にすること
-- 外部リンク（Zenn、GitHub等）は設定ファイルで一元管理すること
-- レジュメデータは構造化されたフォーマット（JSON/YAML）で管理すること
-- コンポーネントは再利用可能な単位で設計し、重複を避けること
-
-**根拠**: 長期的にコンテンツを更新し続けるため、メンテナンスコストの低減は重要である。
-
-### V. Simplicity
-
-シンプルさを保ち、過剰な機能追加を避ける。
-
-- 必要最小限の依存関係に留め、複雑なライブラリの導入は慎重に判断すること
-- 認証やデータベースなどのバックエンド機能は、必要性が明確でない限り導入しないこと
-- 将来の仮想的な要件のために事前に機能を実装しないこと（YAGNI原則）
-- 3つの類似したコード行は、早すぎる抽象化よりも優れている
-
-**根拠**: パーソナルページは個人で維持するため、シンプルさが継続性を保証する。
-
-## Content Strategy
-
-コンテンツの構成と管理方針を定める。
-
-### ブログ
-
-- 技術記事、学習記録、考察などを発信する場として活用
-- 記事ごとにタグ/カテゴリを設定し、関連記事の発見を容易にする
-- RSS/Atomフィードを提供し、購読を可能にする
-
-### レジュメ
-
-- 職歴、スキル、プロジェクト実績を体系的に整理
-- 印刷用のスタイルシートを用意し、PDF出力に対応
-- 定期的な更新を行い、最新の状態を維持
-
-### リンク集
-
-- Zenn、GitHub、その他の外部プラットフォームへのリンクを集約
-- 各リンクには説明文を付与し、何が見られるかを明示
-- SNSシェア用のプロファイルリンクも含める
-
-## Development Workflow
-
-開発プロセスにおける基本方針を定める。
-
-- **コミット粒度**: 機能単位でコミットし、意味のある変更履歴を維持する
-- **ブランチ戦略**: mainブランチは常にデプロイ可能な状態を保つ
-- **デプロイ**: Vercel等のホスティングサービスを活用し、mainへのマージで自動デプロイ
-- **プレビュー**: PRごとにプレビュー環境を作成し、変更を確認可能にする
+[SECTION_3_CONTENT]
+<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
 
 ## Governance
+<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-この憲法の運用と改定に関する規則を定める。
+[GOVERNANCE_RULES]
+<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
 
-- この憲法はプロジェクトの全ての設計・実装判断において最上位の指針となる
-- 改定には以下のプロセスを経ること:
-  1. 改定内容の文書化
-  2. 既存コードとの整合性確認
-  3. 必要に応じた移行計画の策定
-- すべてのPR/レビューにおいて、この憲法への準拠を確認すること
-- 複雑さの導入は正当化が必要であり、シンプルな代替案を常に検討すること
-
-**Version**: 1.0.0 | **Ratified**: 2025-01-24 | **Last Amended**: 2025-01-24
+**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
+<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->

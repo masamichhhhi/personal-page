@@ -17,17 +17,22 @@ const { links } = loadLinks();
   description="Welcome to my personal page - featuring my blog, resume, and links to my work across the web."
 >
   <!-- Hero Section -->
-  <section class="bg-gradient-to-b from-gray-50 to-white py-20">
+  <section class="home-hero py-20">
     <div class="container text-center">
       <div class="mb-8">
         <img
-          src="/profile.jpg"
+          src="/profile-8bit.png"
           alt="Masamichi Iimori"
           class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
         />
       </div>
       <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-        I'm Masamichi
+        <span class="sr-only">Hello, I'm Masamichi</span>
+        <span
+          id="hero-typewriter"
+          class="inline-flex items-center font-mono text-4xl md:text-5xl text-gray-900"
+          aria-hidden="true"
+        ></span>
       </h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
         I'm a software engineer passionate about building great products.
@@ -44,14 +49,43 @@ const { links } = loadLinks();
           </svg>
         </a>
         <a
-          href="/resume"
+          href="/aboutme"
           class="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors no-underline font-medium"
         >
-          View Resume
+          About me
         </a>
       </div>
     </div>
   </section>
+
+  <script is:inline>
+    const target = document.getElementById('hero-typewriter');
+    if (target) {
+      const text = "Hello, I'm Masamichi";
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        target.textContent = text;
+      } else {
+        let index = 0;
+        const cursor = document.createElement('span');
+        cursor.textContent = '▍';
+        cursor.style.marginLeft = '0.2em';
+        cursor.style.animation = 'blink 1s step-end infinite';
+        target.appendChild(cursor);
+
+        const tick = () => {
+          if (index <= text.length) {
+            target.firstChild?.remove();
+            target.textContent = text.slice(0, index);
+            target.appendChild(cursor);
+            index += 1;
+            setTimeout(tick, 70);
+          }
+        };
+        tick();
+      }
+    }
+  </script>
 
   <!-- External Links Section -->
   {links.length > 0 && (
@@ -84,7 +118,7 @@ const { links } = loadLinks();
         </a>
 
         <a
-          href="/resume"
+          href="/aboutme"
           class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all no-underline group"
         >
           <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
@@ -93,10 +127,10 @@ const { links } = loadLinks();
             </svg>
           </div>
           <h2 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-            Resume
+            About me
           </h2>
           <p class="text-gray-600">
-            View my professional experience, skills, and projects.
+            Learn more about my experience, skills, and projects.
           </p>
         </a>
       </div>

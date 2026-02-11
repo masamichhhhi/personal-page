@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { tags, linked = true } = Astro.props;
+const cleanTags = tags.filter((tag) => tag && tag.trim().length > 0);
 
 function formatTagName(tag: string): string {
   return tag
@@ -14,19 +15,21 @@ function formatTagName(tag: string): string {
 }
 ---
 
-<div class="flex flex-wrap gap-2">
-  {tags.map((tag) => (
-    linked ? (
-      <a
-        href={`/blog/tag/${tag}`}
-        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors no-underline"
-      >
-        {formatTagName(tag)}
-      </a>
-    ) : (
-      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-        {formatTagName(tag)}
-      </span>
-    )
-  ))}
-</div>
+{cleanTags.length > 0 && (
+  <div class="flex flex-wrap gap-2">
+    {cleanTags.map((tag) => (
+      linked ? (
+        <a
+          href={`/blog/tag/${tag}`}
+          class="blog-tag hover:opacity-80 transition-opacity"
+        >
+          {formatTagName(tag)}
+        </a>
+      ) : (
+        <span class="blog-tag">
+          {formatTagName(tag)}
+        </span>
+      )
+    ))}
+  </div>
+)}

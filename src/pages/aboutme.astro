@@ -11,12 +11,21 @@ const resume = loadResume();
 ---
 
 <BaseLayout
-  title={`Resume - ${resume.name} | Personal Page`}
+  title={`About me - ${resume.name} | Personal Page`}
   description={`${resume.title} - ${resume.summary.slice(0, 150)}...`}
 >
   <div class="container py-12">
     <!-- Header -->
     <header class="mb-12 text-center print:text-left">
+      <div class="mb-6 flex justify-center print:justify-start">
+        <img
+          src="/profile.jpg"
+          alt={resume.name}
+          class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-lg"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
       <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
         {resume.name}
       </h1>
@@ -48,11 +57,11 @@ const resume = loadResume();
       <p class="text-gray-700 leading-relaxed">{resume.summary}</p>
     </section>
 
-    <!-- Experience -->
-    <ResumeExperience experiences={resume.experiences} />
-
     <!-- Skills -->
     <ResumeSkills skills={resume.skills} />
+
+    <!-- Experience -->
+    <ResumeExperience experiences={resume.experiences} />
 
     <!-- Projects -->
     <ResumeProjects projects={resume.projects} />

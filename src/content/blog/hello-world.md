@@ -28,6 +28,6 @@ I've always believed in the power of writing to clarify thoughts and share knowl
 
 ## Stay Connected
 
-Feel free to explore the site, check out my [resume](/resume), and connect with me through the [links](/links) page.
+Feel free to explore the site, check out my [about me](/aboutme), and connect with me through the [links](/links) page.
 
 Thanks for visiting!
