@@ -9,8 +9,9 @@ export async function GET(context: APIContext) {
   );
 
   return rss({
-    title: 'Personal Page Blog',
-    description: 'Thoughts, tutorials, and insights on technology and development.',
+    title: 'masamichhhi Blog',
+    description:
+      'Thoughts, tutorials, and insights on technology and development.',
     site: context.site!,
     items: sortedPosts.map((post) => ({
       title: post.data.title,
