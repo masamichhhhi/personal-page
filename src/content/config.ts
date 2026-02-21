@@ -13,7 +13,7 @@ const blog = defineCollection({
           .string()
           .min(1)
           .max(30)
-          .regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'Tags must be lowercase kebab-case')
+          .regex(/^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$/, 'Tags must be kebab-case')
       )
       .min(1)
       .max(5),

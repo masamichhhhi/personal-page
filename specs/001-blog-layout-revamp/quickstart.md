@@ -8,7 +8,6 @@
 ## Setup
 
 ```bash
-cd /Users/masamichiiimori/masamichhhhi/personal-page
 npm install
 ```
 
