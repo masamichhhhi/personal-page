@@ -55,6 +55,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
 
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S1S52W0VP2"></script>
+    <script>
+      // @ts-nocheck
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-S1S52W0VP2');
+    </script>
+    
   </head>
   <body class="min-h-screen flex flex-col">
     <Header />
