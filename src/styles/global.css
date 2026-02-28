@@ -295,6 +295,20 @@ html.theme-light {
   .article-content img {
     @apply rounded-lg my-4;
   }
+
+  .article-content figure {
+    @apply my-10 inline-block;
+  }
+
+  .article-content figure img {
+    @apply my-0;
+  }
+
+  .article-content figcaption {
+    @apply text-sm text-center mt-2;
+    color: var(--blog-muted);
+    opacity: 0.7;
+  }
 }
 
 /* Print styles */
