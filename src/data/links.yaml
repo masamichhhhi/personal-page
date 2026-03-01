@@ -9,6 +9,11 @@ links:
     description: "Professional profile and network"
     icon: "mdi:linkedin"
 
+  - platform: "Zenn"
+    url: "https://zenn.dev/masamichhhi"
+    description: "Technical articles and notes"
+    icon: "simple-icons:zenn"
+
   - platform: "Twitter"
     url: "https://x.com/PFC_masamichhhi"
     description: "Thoughts and updates"
