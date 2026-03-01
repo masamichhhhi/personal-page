@@ -40,31 +40,34 @@ function formatTagName(tag: string): string {
     <header class="mb-12">
       <a
         href="/blog"
-        class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors no-underline mb-4"
+        class="back-link inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors no-underline mb-4 animate-fade-in"
+        style="--stagger: 0"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
         Back to Blog
       </a>
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-up" style="--stagger: 1">
         Posts tagged "{formatTagName(tag)}"
       </h1>
-      <p class="text-lg text-gray-600">
+      <p class="text-lg text-gray-600 animate-fade-up" style="--stagger: 2">
         {posts.length} {posts.length === 1 ? 'post' : 'posts'} found
       </p>
     </header>
 
     {posts.length > 0 ? (
       <div class="space-y-8">
-        {posts.map((post) => (
-          <BlogCard
-            title={post.data.title}
-            slug={post.slug}
-            publishedAt={post.data.publishedAt}
-            summary={post.data.summary}
-            tags={post.data.tags}
-          />
+        {posts.map((post, i) => (
+          <div class="animate-fade-up" style={`--stagger: ${i + 3}`}>
+            <BlogCard
+              title={post.data.title}
+              slug={post.slug}
+              publishedAt={post.data.publishedAt}
+              summary={post.data.summary}
+              tags={post.data.tags}
+            />
+          </div>
         ))}
       </div>
     ) : (

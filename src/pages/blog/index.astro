@@ -20,14 +20,12 @@ const posts = sortedPosts.slice(0, POSTS_PER_PAGE);
 <BaseLayout title="Blog | masamichhhi" description="Read my thoughts on technology, development, and more.">
   <div class="container py-12 blog-shell" id="top">
     <header class="blog-hero p-8 md:p-12 mb-12">
-      <h1 class="text-4xl md:text-6xl font-semibold blog-ink mt-4 mb-4">
+      <h1 class="text-4xl md:text-6xl font-semibold blog-ink mt-4 mb-4 animate-fade-up" style="--stagger: 0">
         Blog
       </h1>
-      <p class="text-lg md:text-xl blog-muted max-w-2xl">
+      <p class="text-lg md:text-xl blog-muted max-w-2xl animate-fade-up" style="--stagger: 1">
         Thoughts, tutorials, and insights on technology and development.
       </p>
-      <div class="mt-6 flex flex-wrap items-center gap-4 text-sm blog-muted">
-      </div>
     </header>
 
     <section id="archive" class="pt-6">
@@ -40,15 +38,17 @@ const posts = sortedPosts.slice(0, POSTS_PER_PAGE);
 
       {posts.length > 0 ? (
         <div class="mt-6 space-y-6">
-          {posts.map((post) => (
-            <BlogCard
-              title={post.data.title}
-              slug={post.slug}
-              publishedAt={post.data.publishedAt}
-              summary={post.data.summary}
-              tags={post.data.tags}
-              readingTime={post.data.readingTime}
-            />
+          {posts.map((post, i) => (
+            <div class="animate-fade-up" style={`--stagger: ${i + 2}`}>
+              <BlogCard
+                title={post.data.title}
+                slug={post.slug}
+                publishedAt={post.data.publishedAt}
+                summary={post.data.summary}
+                tags={post.data.tags}
+                readingTime={post.data.readingTime}
+              />
+            </div>
           ))}
         </div>
       ) : (

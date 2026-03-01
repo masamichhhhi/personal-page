@@ -9,18 +9,21 @@ interface Props {
 const { title, description, actionLabel, actionHref } = Astro.props;
 ---
 
-<div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-  <div>
-    <p class="blog-label">{title}</p>
-    {description && <h2 class="text-2xl md:text-3xl font-semibold blog-ink mt-2">{description}</h2>}
+<div class="animate-fade-up" style="--stagger: 1">
+  <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+    <div>
+      <p class="blog-label">{title}</p>
+      {description && <h2 class="text-2xl md:text-3xl font-semibold blog-ink mt-2">{description}</h2>}
+    </div>
+    {actionLabel && actionHref && (
+      <a
+        href={actionHref}
+        class="animated-link inline-flex items-center gap-2 text-sm font-semibold text-gray-900 no-underline hover:text-gray-700"
+      >
+        {actionLabel}
+        <span aria-hidden="true" class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+      </a>
+    )}
   </div>
-  {actionLabel && actionHref && (
-    <a
-      href={actionHref}
-      class="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 no-underline hover:text-gray-700"
-    >
-      {actionLabel}
-      <span aria-hidden="true">→</span>
-    </a>
-  )}
+  <div class="mt-4 h-px bg-[var(--blog-border)] origin-left" style="animation: draw-line 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; animation-delay: 300ms; transform: scaleX(0);"></div>
 </div>
