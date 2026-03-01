@@ -13,6 +13,7 @@
 - Ian Henry: `https://ianthehenry.com/`
 - Kent C. Dodds: `https://kentcdodds.com/`
 - swyx (Shawn Wang): `https://www.swyx.io/`
+- ryoppippi: https://ryoppippi.com/
 
 ---
 

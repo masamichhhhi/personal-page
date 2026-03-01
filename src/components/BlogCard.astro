@@ -18,17 +18,18 @@ const isValid = Boolean(safeTitle && safeSlug && publishedAt);
 ---
 
 {isValid && (
-  <article class="group blog-card p-6">
+  <article class="group blog-card p-6 relative overflow-hidden">
+    <div class="absolute top-0 left-0 h-full w-[3px] bg-[var(--blog-brand)] origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] rounded-r-full"></div>
     <a href={`/blog/${safeSlug}`} class="block no-underline">
       <div class="flex flex-col gap-3">
         <div class="flex flex-wrap items-center gap-3 text-xs blog-muted">
           <time datetime={publishedAt.toISOString()}>{formatDate(publishedAt)}</time>
           {readingTime && <span>{readingTime}</span>}
         </div>
-        <h3 class="text-xl md:text-2xl font-semibold blog-ink group-hover:text-gray-700 transition-colors">
+        <h3 class="text-xl md:text-2xl font-semibold blog-ink transition-colors duration-300">
           {safeTitle}
         </h3>
-        {summary && <p class="text-gray-600 line-clamp-2">{summary}</p>}
+        {summary && <p class="text-gray-600 line-clamp-2 transition-colors duration-300">{summary}</p>}
       </div>
     </a>
     {tags.length > 0 && (
