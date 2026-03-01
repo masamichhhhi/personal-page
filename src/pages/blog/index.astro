@@ -19,14 +19,18 @@ const posts = sortedPosts.slice(0, POSTS_PER_PAGE);
 
 <BaseLayout title="Blog | masamichhhi" description="Read my thoughts on technology, development, and more.">
   <div class="container py-12 blog-shell" id="top">
-    <header class="blog-hero p-8 md:p-12 mb-12">
-      <h1 class="text-4xl md:text-6xl font-semibold blog-ink mt-4 mb-4">
+    <header class="blog-hero p-8 md:p-12 mb-12 fade-in-up relative z-10">
+      <h1 class="text-4xl md:text-6xl font-semibold text-white mt-4 mb-4 relative z-10" style="font-family: var(--blog-font-display)">
         Blog
       </h1>
-      <p class="text-lg md:text-xl blog-muted max-w-2xl">
+      <p class="text-lg md:text-xl max-w-2xl relative z-10" style="color: rgba(255,255,255,0.8)">
         Thoughts, tutorials, and insights on technology and development.
       </p>
-      <div class="mt-6 flex flex-wrap items-center gap-4 text-sm blog-muted">
+      <div class="mt-6 flex flex-wrap items-center gap-3 text-sm relative z-10" style="color: rgba(255,255,255,0.6)">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px)">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
+          {allPosts.length} {allPosts.length === 1 ? 'article' : 'articles'}
+        </span>
       </div>
     </header>
 
@@ -40,21 +44,26 @@ const posts = sortedPosts.slice(0, POSTS_PER_PAGE);
 
       {posts.length > 0 ? (
         <div class="mt-6 space-y-6">
-          {posts.map((post) => (
-            <BlogCard
-              title={post.data.title}
-              slug={post.slug}
-              publishedAt={post.data.publishedAt}
-              summary={post.data.summary}
-              tags={post.data.tags}
-              readingTime={post.data.readingTime}
-            />
+          {posts.map((post, i) => (
+            <div class="animate-on-scroll" style={`transition-delay: ${i * 0.08}s`}>
+              <BlogCard
+                title={post.data.title}
+                slug={post.slug}
+                publishedAt={post.data.publishedAt}
+                summary={post.data.summary}
+                tags={post.data.tags}
+                readingTime={post.data.readingTime}
+              />
+            </div>
           ))}
         </div>
       ) : (
-        <div class="text-center py-12">
-          <p class="text-gray-600 text-lg">No articles yet.</p>
-          <p class="text-gray-500 mt-2">Check back soon for new content!</p>
+        <div class="text-center py-16 fade-in">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center" style="background: var(--blog-accent-soft)">
+            <svg class="w-8 h-8" style="color: var(--blog-brand)" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
+          </div>
+          <p class="blog-ink text-lg font-semibold">No articles yet.</p>
+          <p class="blog-muted mt-2">Check back soon for new content!</p>
         </div>
       )}
 
@@ -63,4 +72,25 @@ const posts = sortedPosts.slice(0, POSTS_PER_PAGE);
       </div>
     </section>
   </div>
+
+  <!-- Scroll reveal animation -->
+  <script is:inline>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+        observer.observe(el);
+      });
+    } else {
+      document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+        el.classList.add('is-visible');
+      });
+    }
+  </script>
 </BaseLayout>

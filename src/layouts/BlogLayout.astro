@@ -19,49 +19,56 @@ const ogImage = coverImage || '/og-image.png';
 
 <BaseLayout title={`${title} | Blog`} description={summary} ogImage={ogImage}>
   <article class="container py-12">
-    <header class="mb-8">
-      <div class="flex flex-col gap-4">
+    <header class="mb-12 fade-in-up">
+      <div class="flex flex-col gap-5">
         <a
           href="/blog"
-          class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors no-underline"
+          class="group inline-flex items-center gap-2 text-sm font-medium blog-muted hover:blog-brand transition-colors no-underline w-fit"
         >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           Back to Blog
         </a>
 
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
+        <h1 class="text-4xl md:text-5xl font-bold blog-ink" style="font-family: var(--blog-font-display)">
           {title}
         </h1>
 
-        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600">
-          <time datetime={publishedAt.toISOString()}>
-            {formatDate(publishedAt)}
-          </time>
+        <div class="flex flex-wrap items-center gap-4 text-sm blog-muted">
+          <span class="inline-flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <time datetime={publishedAt.toISOString()}>
+              {formatDate(publishedAt)}
+            </time>
+          </span>
           {updatedAt && (
-            <span class="text-gray-400">
-              (Updated: {formatDate(updatedAt)})
+            <span class="inline-flex items-center gap-1.5" style="color: var(--blog-brand)">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+              Updated: {formatDate(updatedAt)}
             </span>
           )}
         </div>
 
         <TagList tags={tags} />
+
+        <div class="h-1 w-24 rounded-full mt-2" style="background: linear-gradient(90deg, var(--blog-brand), var(--section-links-accent))"></div>
       </div>
     </header>
 
-    <div class="article-content">
+    <div class="article-content fade-in" style="animation-delay: 0.3s">
       <slot />
     </div>
 
-    <footer class="mt-12 pt-8 border-t border-gray-200">
+    <footer class="mt-16 pt-8 relative">
+      <div class="h-px w-full mb-8" style="background: linear-gradient(90deg, transparent, var(--blog-border), transparent)"></div>
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <TagList tags={tags} />
         <a
           href="/blog"
-          class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors no-underline"
+          class="group inline-flex items-center gap-2 text-sm font-medium blog-muted no-underline transition-colors duration-300"
         >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           Back to Blog

@@ -6,11 +6,12 @@ const currentYear = new Date().getFullYear();
 const { links } = loadLinks();
 ---
 
-<footer class="border-t border-gray-200 mt-auto no-print">
-  <div class="container py-6">
+<footer class="mt-auto no-print relative">
+  <div class="h-px w-full" style="background: linear-gradient(90deg, transparent, var(--blog-brand), var(--section-links-accent), transparent)"></div>
+  <div class="container py-8">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-gray-600">
-        &copy; {currentYear} masamichhhi. All rights reserved.
+      <p class="text-sm blog-muted">
+        &copy; {currentYear} <span class="font-semibold gradient-text">masamichhhi</span>. All rights reserved.
       </p>
       <div class="flex items-center gap-4">
         {links.slice(0, 4).map((link) => (
@@ -18,7 +19,8 @@ const { links } = loadLinks();
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-600 hover:text-blue-600 transition-colors"
+            class="blog-muted transition-all duration-300 hover:-translate-y-0.5"
+            style="--hover-color: var(--blog-brand)"
             title={link.platform}
           >
             <Icon name={link.icon} class="w-5 h-5" />
