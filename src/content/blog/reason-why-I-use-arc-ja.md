@@ -2,7 +2,7 @@
 title: "Arcブラウザの新規開発が止まってもなお、離れられない"
 publishedAt: 2026-03-01
 summary: "Arcブラウザの新規開発停止後も、Arcが良すぎて他のブラウザに移行できない話"
-tags: ["Arc", "browser", "productivity", "UX", "Developer-tools"]
+tags: ["JA", "Arc", "browser", "productivity", "UX"]
 ---
 
 ## はじめに
